@@ -22,12 +22,11 @@ const colors = [
   startButton.addEventListener('click', onClickChangeBodyColor);
   stopButton.addEventListener('click', onClickStopChangeBodyColor);
  
-  function onClickChangeBodyColor () {
-    if (i === true) {
-      intervalId = setInterval(() => {let color = colors[randomIntegerFromInterval(0, 5)];
-        body.style.backgroundColor = color}, 1000);
-        i = false;
-    } 
+function onClickChangeBodyColor() {
+      i = true;
+      intervalId = setInterval(() => {let color = colors[randomIntegerFromInterval(0, colors.length)];
+      body.style.backgroundColor = color}, 1000);
+      i = false;
   }
 
 function onClickStopChangeBodyColor () {
